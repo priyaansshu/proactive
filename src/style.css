@@ -166,7 +166,7 @@ html{
     color: #eeeeee;
 }
 #projects-text{
-    min-width: 224px;
+    min-width: 232px;
     text-align: center;
     font-family: "netflixSansBold";
     font-size: 26px;
@@ -174,7 +174,7 @@ html{
 }
 #ideapad-text{
     min-width: 76px;
-    margin-left: 148px;
+    margin-left: 156px;
     padding-bottom: 5px;
     font-family: "netflixSansMedium";
     text-align: right;
@@ -203,7 +203,7 @@ left: 0;
 }
 
 #to-prompts{
-    min-width: 224px;
+    min-width: 232px;
     text-align: left;
     font-family: "netflixSansBold";
     font-size: 18px;
