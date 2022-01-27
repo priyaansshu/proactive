@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/proactive/static/css/main.4cf35747.css",
+    "main.js": "/proactive/static/js/main.98f5c551.js",
+    "static/js/787.9fc2379a.chunk.js": "/proactive/static/js/787.9fc2379a.chunk.js",
+    "static/media/NetflixSansBlack.ttf": "/proactive/static/media/NetflixSansBlack.4ebb8580a2397f88aed0.ttf",
+    "static/media/NetflixSansBold.ttf": "/proactive/static/media/NetflixSansBold.cea8acffd548be06c7c7.ttf",
+    "static/media/NetflixSansMedium.ttf": "/proactive/static/media/NetflixSansMedium.a02ab994a041ae11d8ca.ttf",
+    "static/media/NetflixSansRegular.ttf": "/proactive/static/media/NetflixSansRegular.31acc1edd781a074d7f9.ttf",
+    "static/media/Recoleta-Medium.ttf": "/proactive/static/media/Recoleta-Medium.6d37b766adc0de50ba64.ttf",
+    "index.html": "/proactive/index.html",
+    "main.4cf35747.css.map": "/proactive/static/css/main.4cf35747.css.map",
+    "main.98f5c551.js.map": "/proactive/static/js/main.98f5c551.js.map",
+    "787.9fc2379a.chunk.js.map": "/proactive/static/js/787.9fc2379a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4cf35747.css",
+    "static/js/main.98f5c551.js"
+  ]
+}
