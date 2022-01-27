@@ -1,0 +1,850 @@
+@font-face {
+    font-family: "recoleta";
+    src: url(./fonts/Recoleta/Recoleta-Medium.ttf);
+}
+@font-face {
+    font-family: "netflixSansRegular";
+    src: url(./fonts/Netflix/NetflixSansRegular.ttf);
+}
+@font-face {
+    font-family: "netflixSansMedium";
+    src: url(./fonts/Netflix/NetflixSansMedium.ttf);
+}
+@font-face {
+    font-family: "netflixSansBold";
+    src: url(./fonts/Netflix/NetflixSansBold.ttf);
+}
+@font-face {
+    font-family: "netflixSansBlack";
+    src: url(./fonts/Netflix/NetflixSansBlack.ttf);
+}
+html{
+    height: 100vh;
+    cursor: default;
+    background-color: #eeece6;
+    /* background-color: white; */
+}
+.root{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeece6;
+}
+.main-container{
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    /* background-color: #eeece6; */
+    background-color: white;
+}
+
+/* the three columns */
+.main-column{
+    border-radius: 25px;
+    width: 400px;
+    height: 480px;
+    padding: 30px;
+    /* background-color: #e0e8e7; */
+    /* background-color: #55204e; */
+    background: radial-gradient(circle at 80% 120%, #7d2c72 15%, #55204e 80%);
+    overflow-y: scroll;
+    transition: all 0.3s ease;
+}
+#todo-column{
+    box-shadow: 0px 10px 60px #8a6e87;
+}
+#completed-column #todo-title{
+    cursor: default;
+    color: #eeeeee;
+}
+#completed-column #todo-desc{
+    cursor: default;
+    color: #eeeeee;
+}
+.column-top-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.column-heading{
+    font-family: "netflixSansMedium";
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #eeeeee;
+}
+.task-count{
+    font-family: "netflixSansMedium";
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 35px;
+    background-color:#eeeeee;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    color: #55204e;
+    box-shadow: 0px 0px 40px #210228;
+}
+/* all todos container */
+.todoContainer{   
+    max-height: 70%;
+}
+/* individual todo container in all three columns */
+.todos-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 100%;    
+    height: fit-content;
+    padding: 10px;
+    background-color:#eeeeee;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+#progress-todos-container{
+    background-color: #ffc872;
+}
+#completed-todos-container{
+    background-color: rgb(105, 165, 105);
+    color: #eeeeee;
+}
+.todos-container-top-section{
+    width: 100%;
+    min-height: 40px;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;   
+}
+#todo-desc{
+    width: 95%;
+    word-break: break-all;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#todo-desc:hover{
+    background-color: #eeece6;
+}
+#completed-column #todo-desc:hover{
+    background-color: transparent;
+}
+.todos-container-bottom-section{
+    width: 100%;
+    font-family: "netflixSansRegular";
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;  
+}
+#todo-title{
+    word-wrap:"break-word";
+    font-family: "netflixSansMedium";
+    font-size: 15px;
+    margin-left: 10px;
+    min-width: 70%;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #55204e;
+}
+.navbar{
+    padding: 20px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #55204e;
+    box-shadow: 0px 10px 50px #587d7a35;
+    color: #eeeeee;
+}
+#projects-text{
+    min-width: 224px;
+    text-align: center;
+    font-family: "netflixSansBold";
+    font-size: 26px;
+    text-decoration: none;
+}
+#ideapad-text{
+    min-width: 76px;
+    margin-left: 148px;
+    padding-bottom: 5px;
+    font-family: "netflixSansMedium";
+    text-align: right;
+    font-size:20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffe3b3;
+    cursor: pointer;  
+    position: relative; 
+}
+#ideapad-text:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0%;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #ffe3b3;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+#ideapad-text:hover:after { 
+width: 100%; 
+left: 0; 
+}
+
+#to-prompts{
+    min-width: 224px;
+    text-align: left;
+    font-family: "netflixSansBold";
+    font-size: 18px;
+    color: #eeeeee;
+    text-transform: capitalize;
+}
+#to-prompts a{
+    color: #eeeeee;
+    cursor: pointer;
+}
+
+#add-todo-form{
+    margin-bottom: 20px;
+    min-height: fit-content;
+}
+.add-todo{
+    display: flex;
+    justify-content: space-between;
+    min-width: 100%;
+    background-color:#eeeeee;
+    border-radius: 20px;
+    min-height: 40px;
+    height: fit-content;
+    padding-left: 10px;
+}
+.add-desc .add-todo{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.form-input{
+    padding-left: 10px;
+    font-family: "netflixSansMedium";
+    font-size: 15px;
+    width: 100%;
+    background-color: transparent;
+    border-style: none;
+    color: #55204e;
+}
+#edit-title-input{
+    background-color: transparent;
+    border-style: none;
+    width: fit-content;
+    margin-left: 10px;
+    padding-left: 0%;
+}
+.form-input:focus{
+    outline: none;
+}
+.add-desc .form-input{
+    margin-bottom: 10px;
+}
+.add-todo-bottom-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* textarea */
+.todo-description{
+    font-family: "netflixSansRegular";
+    font-size: 14px;
+    text-align: left;
+    align-self: flex-end;
+    width: 95%;
+    padding: 0;
+    color: #50404e;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: text;
+    transition: all 0.3s ease;
+}
+#todo-submit-button{
+    align-self: flex-end;
+    background-color: #eeeeee;
+    border-color: #55204e;
+    border-width: 4px;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-family: "netflixSansRegular";
+    font-size: 15px;
+    color: #55204e;
+    padding: 0;
+}
+#todo-submit-button:after{
+    content: "+";
+    font-size: 20px;
+}
+#todo-submit-button:hover:after{
+    content: "+";
+    color: #eeeeee;
+}
+#todo-submit-button:hover{
+    background-color: #55204e;
+    min-width: 80px;
+}
+#todo-submit-button:focus{
+    outline: none;
+}
+.todo-container, .progress-container, .completed-container{
+    min-width: 100%;
+    color: rgb(174, 164, 179);
+}
+.todo-check-buttons-container{
+    align-self: flex-start;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50px;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+.todo-check-buttons-container:hover{
+    background-color: #55204e;
+}
+.todo-check-button{
+    align-items: flex-end;
+    background-color: #e0e8e7;
+    border-style: none;
+    margin: 5px;
+    /* margin-top: 0px; */
+    min-width: 25px;
+    min-height: 25px;
+    border-radius: 50px;
+    font-family: "netflixSansRegular";
+    font-size: 15px;
+    color: #587d7a;
+    padding: 0;
+    transition: all 0.1s ease;
+}
+#progress-check{
+    border: 4px solid #ffc872;
+    background-color: transparent;
+}
+#completed-check{
+    background-color: transparent;
+    border: 4px solid rgb(105, 165, 105);
+}
+#progress-check:hover{
+    background-color: #ffc872;
+}
+#completed-check:hover{
+    background-color: rgb(105, 165, 105);
+}
+#progressContainer-check-button{
+    background-color: transparent;
+    border: 4px solid rgb(105, 165, 105);
+}
+#progressContainer-check-button:hover{
+    background-color: rgb(105, 165, 105);
+}
+#remove-button{
+    align-self: center;
+    border: 4px solid #eb3f61;
+    background-color: transparent;
+}
+#remove-button:hover{
+    background-color: #eb3f61;
+}
+.edit-save-button{
+    padding: 0px 10px;
+    align-self: flex-end;
+    border: none;
+    border-radius:50px;
+    min-width: 70px;
+    min-height: 35px;
+    font-family: "netflixSansRegular";
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #55204e;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+.edit-save-button:hover{
+    background-color: #55204e;
+    color: #eeeeee;
+}
+
+
+/* Ideapad */
+
+.project-link{
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    margin-top: 5px;
+}
+.project-link-text{
+    font-family: "netflixSansMedium";
+    font-size:20px;
+    color: rgba(38, 67, 94);
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-bottom: 5px;
+    min-width: 100px;
+    max-width: 100px;
+    border-radius: 10px;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+.project-link-text:before{
+    content: "< "; 
+}
+.project-link-text:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0%;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: rgba(38, 67, 94);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.project-link-text:hover:after { 
+width: 100%; 
+left: 0; 
+}
+.project-link-text:hover{
+    color: rgba(38, 67, 94);
+}
+
+@keyframes text {
+    0%{
+        padding-right: 10px;
+    }
+    100%{
+        padding-right: 80px;
+    }
+}
+@-webkit-keyframes text{
+    0%{
+        padding-right: 10px;
+    }
+    100%{
+        padding-right: 80px;
+    }
+}
+.ideapad-main-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 99vh;
+    padding: 2%;
+    margin-top: 1vh;
+    background-color: #eeeeee;
+}
+.side-panel{
+    /* background-color: #587d7a; */
+    background-color: #e0e8e7;
+    min-width: 15%;
+    height: fit-content;
+    margin: 10px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 60px #587d7a37,
+                0px 0px 50px #eef5f5 inset;
+    padding: 15px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ideapad-heading{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.ideapad-text{
+    font-family: "netflixSansBold";
+    font-family: 20px;
+}
+.ideapad-image-container{
+    min-width: 30px;
+    min-height: 30px;
+    margin-bottom: 10px;
+    background: url('./images/ideapad.png');
+    background-size: cover;
+}
+
+.brush-size-container{
+    background-color: #cddedc;
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+.brush-size-text{
+    font-family: "netflixSansMedium";
+    font-size: 16px;
+}
+.brush-size-input{
+    background-color: #e0e8e7;
+    border-style: none;
+}
+.brush-size-circles-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
+.brush-size-circle{
+    background-color: #e0e8e7;
+    border: 5px solid #587d7a;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+.brush-size-circle:hover{
+    background-color: #cddedc;
+}
+
+#brush-size-circle-1{
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+}
+#brush-size-circle-1-active{
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    background-color:#587d7a;
+}
+#brush-size-circle-2{
+    width: 22px;
+    height: 22px;
+    border-radius: 50px;
+}
+#brush-size-circle-2-active{
+    width: 22px;
+    height: 22px;
+    border-radius: 50px;
+    background-color:#587d7a;
+}
+#brush-size-circle-3{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
+#brush-size-circle-3-active{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color:#587d7a;
+}
+#brush-size-circle-4{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+#brush-size-circle-4-active{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color:#587d7a;
+}
+.brush-color-container{
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+.brush-color-text{
+    font-family: "netflixSansMedium";
+    font-size: 16px;
+}
+.brush-color-input{
+    -webkit-appearance: none;
+    background: linear-gradient(
+    to right,
+    #ff0000 0%,
+    #ffff00 17%,
+    #00ff00 33%,
+    #00ffff 50%,
+    #0000ff 67%,
+    #ff00ff 83%,
+    #ff0000 100%
+    );
+    height: 10px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 10px;
+    /* border: px solid #cddedc; */
+}
+
+.brush-color-input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    /* border: 3px solid #587d7a; */
+    cursor: pointer;
+    box-shadow: 0 0 2px 0 #555;
+    background-color: #cddedc;
+  }
+
+.canvas-options-container{
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    background-color: #587d7a;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.grid-toggle-option-container{
+    width: fit-content;
+    height: 100%;
+    background-color: #cddedc;
+    padding: 10px;
+
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.grid-toggle-text{
+    font-family: "netflixSansMedium";
+    color: #587d7a;
+    font-size: 18px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cddedc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  input:checked + .slider {
+    background-color: #587d7a;
+  }
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+.canvas-bg-option-container{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.canvas-color-text{
+    width: 100%;
+    color: #e0e8e7;
+    font-family: "netflixSansMedium";
+    font-size: 16px;
+}
+.canvas-colors-container{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 10px;
+}
+.canvas-bg-color-circle{
+    width: 33px;
+    height: 33px;
+    border-radius: 50px;
+    background-color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.canvas-bg-color-circle:hover{
+    border: 5px solid #cddedc;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.187);
+}
+#canvas-bg-color-1{
+    background-color: #000000;
+}
+#canvas-bg-color-1-active{
+    background-color: #000000;
+    border: 5px solid #e0e8e7;
+}
+#canvas-bg-color-2{
+    background-color: #ffffff;
+}
+#canvas-bg-color-2-active{
+    background-color: #ffffff;
+    border: 5px solid #3b615d;
+}
+#canvas-bg-color-3{
+    background-color: #e0e8e7;
+}
+#canvas-bg-color-3-active{
+    background-color: #e0e8e7;
+    border: 5px solid #3b615d;
+}
+#canvas-bg-color-4{
+    background-color: #587d7a;
+}
+#canvas-bg-color-4-active{
+    background-color: #587d7a;
+    border: 5px solid #e0e8e7; 
+}
+
+.canvas-buttons-container{
+    width: 100%;
+    height: fit-content;
+    padding: 15px 10px;
+    background-color: #cddedc;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+.canvas-button{
+    min-width: 45%;
+    min-height: 30px;
+    border-style: none;
+    background-color: #e0e8e7;
+    transition: all 0.3s ease;
+    font-family: "netflixSansRegular";
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #587d7a;
+    padding: 10px;
+}
+.canvas-button:hover{
+    background-color: #587d7a;
+    border-radius: 25px;
+    color: #e0e8e7;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.297);
+}
+#canvas-clear-button{
+    margin-bottom: 5px;
+    border-top-left-radius: 15px;
+}
+#canvas-clear-button:hover{
+    margin-bottom: 5px;
+    border-radius: 15px;
+    border-bottom-right-radius: 0px;
+}
+#canvas-undo-button{
+    margin-bottom: 5px;
+    border-top-right-radius: 15px;
+}
+#canvas-undo-button:hover{
+    margin-bottom: 5px;
+    border-radius: 15px;
+    border-bottom-left-radius: 0px
+}
+#canvas-load-button{
+    border-bottom-left-radius: 15px;
+}
+#canvas-load-button:hover{
+    border-radius: 15px;
+    border-top-right-radius: 0px;
+}
+#canvas-download-button{
+    border-bottom-right-radius: 15px;
+}
+#canvas-download-button:hover{
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+}
+
+/* CANVAS */
+.my-canvas{
+    background-color: #e0e8e7;
+    min-width: 80%;
+    height: 95%;
+    margin: 10px;
+    margin-left: 0%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 60px #587d7a37;
+}
+#drawing-board{
+    min-width: 100%;
+    min-height: 100%;
+}
