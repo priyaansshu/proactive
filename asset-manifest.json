@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/proactive/static/css/main.6ad7be05.css",
+    "main.css": "/proactive/static/css/main.785ec28c.css",
     "main.js": "/proactive/static/js/main.d4c3c5b0.js",
     "static/js/787.9fc2379a.chunk.js": "/proactive/static/js/787.9fc2379a.chunk.js",
     "static/media/NetflixSansBlack.ttf": "/proactive/static/media/NetflixSansBlack.4ebb8580a2397f88aed0.ttf",
@@ -9,12 +9,12 @@
     "static/media/NetflixSansRegular.ttf": "/proactive/static/media/NetflixSansRegular.31acc1edd781a074d7f9.ttf",
     "static/media/Recoleta-Medium.ttf": "/proactive/static/media/Recoleta-Medium.6d37b766adc0de50ba64.ttf",
     "index.html": "/proactive/index.html",
-    "main.6ad7be05.css.map": "/proactive/static/css/main.6ad7be05.css.map",
+    "main.785ec28c.css.map": "/proactive/static/css/main.785ec28c.css.map",
     "main.d4c3c5b0.js.map": "/proactive/static/js/main.d4c3c5b0.js.map",
     "787.9fc2379a.chunk.js.map": "/proactive/static/js/787.9fc2379a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ad7be05.css",
+    "static/css/main.785ec28c.css",
     "static/js/main.d4c3c5b0.js"
   ]
 }
